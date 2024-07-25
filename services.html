@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Bespoke Curtains, Blinds, Soft Furnishings | Christine's Curtains</title>
+    <meta name="description" content="Explore our range of bespoke curtains, Roman blinds, and soft furnishings. Handcrafted with precision to enhance your home's decor.">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li> 
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="reviews.html">Reviews</a></li> 
+            <li><a href="services.html">Services</a></li> 
+            <li><a href="portfolio.html">Portfolio</a></li> 
+            <li><a href="contact.html">Contact</a></li> 
+        </ul> 
+        <ul>
+            <li><a href="index.html"><img class="logo-img" src="Images/logo2.png" alt="Christine's Curtains logo"></a></li>
+            <li class="hideOnMobile"><a href="reviews.html">Reviews</a></li> 
+            <li class="hideOnMobile"><a href="services.html">Services</a></li> 
+            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li> 
+            <li class="hideOnMobile"><a href="contact.html">Contact</a></li> 
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul> 
+    </nav>
+
+    <div class="services-container">
+        <div class="services-row">
+            <div class="services-content">
+                <h2>Hand Made Bespoke Curtains</h2>
+                <p class="services-text">Transform your living spaces with my bespoke curtain services. As a dedicated curtain maker, I offer a wide range of styles, from classic to contemporary, ensuring a perfect fit for your home decor. I'll work with you personally to select the ideal fabrics, designs, and finishes, providing both functionality and elegance.</p>
+            </div>
+            <div class="services-content">
+                <img src="Images/services3.png" alt="Bespoke curtains example">
+            </div>
+        </div>
+
+        <div class="services-row">
+            <div class="services-content">
+                <img src="Images/services2.jpg" alt="Roman blinds example">
+            </div>
+            <div class="services-content">
+                <h2>Roman Blinds</h2>
+                <p class="services-text">Add a touch of sophistication to any room with my custom Roman blinds. Crafted with precision, these blinds combine beauty and practicality, offering a stylish alternative to traditional window treatments. Choose from an array of luxurious fabrics and personalized details to create a truly unique look.</p>
+            </div>
+        </div>
+
+        <div class="services-row">
+            <div class="services-content">
+                <h2>Soft Furnishings</h2>
+                <p class="services-text">Complete your home’s aesthetic with my exquisite soft furnishings. From custom cushions and throws to tailored upholstery, I create pieces that complement your interior design. Every item is handcrafted to enhance comfort and add a distinctive charm to your living spaces.</p>
+            </div>
+            <div class="services-content">
+                <img src="Images/services4.jpg" alt="Soft furnishings example">
+            </div>
+        </div>
+
+        <div class="services-row">
+            <div class="services-content">
+                <img src="Images/services1.jpg" alt="Fabric selection">
+            </div>
+            <div class="services-content">
+                <h2>Fabrics</h2>
+                <p class="services-text">Discover a vast selection of high-quality fabrics perfect for all your decorating needs. Whether you’re looking for bold patterns or subtle hues, my curated collection features something for every taste. I'll assist you in choosing the ideal fabrics to bring your vision to life.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
+
+    <script src="app.js"></script>    
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+        }
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

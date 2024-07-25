@@ -1,0 +1,491 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav bar*/
+body{
+    min-height: 100vh;
+    background-color: #f7faf7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', tahoma, Geneva, Verdana ,sans-serif;
+}
+
+.logo-img {
+    max-height: 100px;
+    max-width: 100%;
+}
+
+nav{
+    background-color: white;
+    box-shadow: 10px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: rgba(216, 216, 216, 0.61);
+    
+}
+
+nav li:first-child{
+    margin-right: auto;
+    height: fit-content;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(3px);
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+.menu-button{
+    display: none;
+}
+
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
+}
+
+/*Main section*/
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 830px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(http://127.0.0.1:5500/images/6.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media(max-width: 400px){
+    .intro{
+        width: 100%;
+    }
+}
+
+.intro h1{
+    font-family: sans-serif;
+    font-size: 60px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.intro p{
+    font-size: 20px;
+    color: #d1d1d1;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.intro button{
+    background-color: #b6eaf3;
+    color: #000;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+}
+
+.achievements{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 80px;
+}
+
+.achievements .work{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.achievements .work i{
+    width: fit-content;
+    font-size: 50px;
+    color: #333333;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    padding: 12px;
+}
+
+.achievements .work .work-heading{
+    font-size: 20px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-weight: bold;
+    
+}
+
+.achievements .work .work-text{
+    font-size: 15px;
+    color: #585858;
+    margin: 10px 0;
+    max-width: 70%;
+    align-items: center;
+}
+
+.about-me{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px;
+    border-top: 20px solid #f7faf7;
+    gap: 20px;
+}
+
+.about-me img{
+    width: 270px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.about-me-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-me-text h2 {
+    font-size: 30px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+.about-me-text p{
+    font-size: 15px;
+    color: #585858;
+    margin: 10px 5px;
+    
+}
+.buttonundermap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.buttonundermap button{
+    background-color: #b6eaf3;
+    color: #000;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+/*Map*/
+.map {
+    width: 100%; /* Adjust the width as per your requirement */
+    max-width: 100%; /* Optional: Set a maximum width for responsiveness */
+    margin: 20px auto; /* Centers the map horizontally with some spacing */
+}
+
+.map iframe {
+    width: 100%; /* Ensures the iframe (Google Maps) fills the container */
+    height: 500px; /* Adjust the height as per your design */
+    border: 0; /* Removes border around the iframe */
+}
+
+/* Gallery and modal styles */
+#galleryModal {
+    display: none;
+}
+
+#gallery {
+    margin-top: 20px;
+}
+/* Image row and container styles */
+.container {
+    width: 80%;
+    margin: 1% auto;
+    color: #333;
+}
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5%;
+    justify-content: space-between;
+}
+
+.image-container {
+    flex-basis: calc(33.33% - 8px);
+    margin-bottom: 8px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: auto;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.index-bottom{
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+}
+.index-bottom button{
+    background-color: #b6eaf3;
+    color: #000;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+    margin-right: 60px;
+}
+/*Footer styles*/
+/* Footer styles */
+footer {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+    text-decoration: underline;
+    text-align: center; /* Center align the text */
+    padding: 20px 0; /* Add some padding for spacing */
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove default padding */
+}
+
+footer li {
+    margin: 0 10px; /* Add spacing between list items */
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px; /* Adjust padding for links */
+    display: inline-block; /* Make links behave as blocks */
+}
+
+
+/* Services*/
+.services-container{
+    max-width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+.services-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.services-content{
+    flex: 1;
+    padding: 20px;
+}
+.services-content h2{
+    color: #164394;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+.services-content img{
+    max-width: 500px;
+    max-height: 280px;
+    height: auto;
+}
+.services-text{
+    text-align: justify;
+}
+
+
+
+/*Thank you page*/
+.thankyou_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.thankyou_body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+/*Reviews Page CSS*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.review-container {
+    max-width: 50%;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+.review-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.review-item img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10%; /* Rounded image */
+}
+
+.review-item blockquote {
+    flex: 1; /* Take remaining space */
+    margin: 0;
+    padding: 20px;
+    background-color: #fff;
+    border: none; /* Remove blockquote border */
+}
+
+blockquote p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
