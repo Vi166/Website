@@ -233,7 +233,7 @@ nav li:first-child{
 }
 .photosaboveportfolio img {
     margin: 0 20px;
-    border: 0px solid #000; 
+    border: 1px solid #000; 
     border-radius: 5px;
 }
 .buttonundermap{
