@@ -1,16 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-/* Nav bar*/
-body{
+/* Nav bar */
+body {
     min-height: 100vh;
     background-color: #f7faf7;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    font-family: 'Segoe UI', tahoma, Geneva, Verdana ,sans-serif;
+    font-family: 'Segoe UI', tahoma, Geneva, Verdana, sans-serif;
 }
 
 .logo-img {
@@ -18,12 +18,12 @@ body{
     max-width: 100%;
 }
 
-nav{
+nav {
     background-color: white;
     box-shadow: 10px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-nav ul{
+nav ul {
     width: 100%;
     list-style: none;
     display: flex;
@@ -31,7 +31,7 @@ nav ul{
     align-items: center;
 }
 
-nav li{
+nav li {
     height: 50px;
 }
 
@@ -46,15 +46,14 @@ nav a {
 
 nav a:hover {
     background-color: rgba(216, 216, 216, 0.61);
-    
 }
 
-nav li:first-child{
+nav li:first-child {
     margin-right: auto;
     height: fit-content;
 }
 
-.sidebar{
+.sidebar {
     position: fixed;
     top: 0;
     right: 0;
@@ -70,35 +69,114 @@ nav li:first-child{
     justify-content: flex-start;
 }
 
-.sidebar li{
+.sidebar li {
     width: 100%;
 }
 
-.sidebar a{
+.sidebar a {
     width: 100%;
 }
 
-.menu-button{
+.menu-button {
     display: none;
 }
 
-@media(max-width: 800px){
-    .hideOnMobile{
+@media(max-width: 800px) {
+    .hideOnMobile {
         display: none;
     }
-    .menu-button{
+
+    .menu-button {
         display: block;
     }
-}
 
-@media(max-width: 400px){
-    .sidebar{
-        width: 100%;
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        padding: 10px 20px;
     }
 }
 
-/*Main section*/
-.intro{
+@media(max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .intro h1 {
+        font-size: 40px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .intro p {
+        font-size: 16px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .intro button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .achievements {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .achievements .work {
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-me {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .about-me-text h2 {
+        font-size: 24px;
+    }
+
+    .about-me-text p {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .photosaboveportfolio {
+        flex-direction: column;
+    }
+
+    .buttonundermap button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+
+    .review-container {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .review-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .review-item img {
+        margin: 0 0 10px 0;
+    }
+}
+
+/* Main section */
+.intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,13 +189,7 @@ nav li:first-child{
     background-repeat: no-repeat;
 }
 
-@media(max-width: 400px){
-    .intro{
-        width: 100%;
-    }
-}
-
-.intro h1{
+.intro h1 {
     font-family: sans-serif;
     font-size: 60px;
     color: #fff;
@@ -126,14 +198,14 @@ nav li:first-child{
     margin: 0;
 }
 
-.intro p{
+.intro p {
     font-size: 20px;
     color: #d1d1d1;
     text-transform: uppercase;
     margin: 20px 0;
 }
 
-.intro button{
+.intro button {
     background-color: #b6eaf3;
     color: #000;
     padding: 10px 25px;
@@ -145,14 +217,14 @@ nav li:first-child{
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
 }
 
-.achievements{
+.achievements {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 40px 80px;
 }
 
-.achievements .work{
+.achievements .work {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -160,7 +232,7 @@ nav li:first-child{
     padding: 0 40px;
 }
 
-.achievements .work i{
+.achievements .work i {
     width: fit-content;
     font-size: 50px;
     color: #333333;
@@ -169,24 +241,23 @@ nav li:first-child{
     padding: 12px;
 }
 
-.achievements .work .work-heading{
+.achievements .work .work-heading {
     font-size: 20px;
     color: #333333;
     text-transform: uppercase;
     margin: 10px 0;
     font-weight: bold;
-    
 }
 
-.achievements .work .work-text{
+.achievements .work .work-text {
     font-size: 15px;
     color: #585858;
     margin: 10px 0;
     max-width: 70%;
-    align-items: center;
+    text-align: center;
 }
 
-.about-me{
+.about-me {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,13 +265,14 @@ nav li:first-child{
     gap: 20px;
 }
 
-.about-me img{
+.about-me img {
     width: 270px;
     max-width: 100%;
     height: auto;
     border-radius: 5px;
     object-fit: cover;
 }
+
 .about-me-text {
     display: flex;
     flex-direction: column;
@@ -215,34 +287,35 @@ nav li:first-child{
     margin: 0;
 }
 
-
-.about-me-text p{
+.about-me-text p {
     font-size: 15px;
     color: #585858;
     margin: 10px 5px;
-    
 }
 
-.photosaboveportfolio{
+.photosaboveportfolio {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 40px;  
+    padding: 0 40px;
     border: #000;
     border-radius: 10px;
 }
+
 .photosaboveportfolio img {
     margin: 0 20px;
-    border: 1px solid #000; 
+    border: 1px solid #000;
     border-radius: 5px;
 }
-.buttonundermap{
+
+.buttonundermap {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
-.buttonundermap button{
+
+.buttonundermap button {
     background-color: #b6eaf3;
     color: #000;
     padding: 10px 25px;
@@ -253,17 +326,18 @@ nav li:first-child{
     cursor: pointer;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
-/*Map*/
+
+/* Map */
 .map {
-    width: 100%; /* Adjust the width as per your requirement */
-    max-width: 100%; /* Optional: Set a maximum width for responsiveness */
-    margin: 20px auto; /* Centers the map horizontally with some spacing */
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
 }
 
 .map iframe {
-    width: 100%; /* Ensures the iframe (Google Maps) fills the container */
-    height: 500px; /* Adjust the height as per your design */
-    border: 0; /* Removes border around the iframe */
+    width: 100%;
+    height: 500px;
+    border: 0;
 }
 
 /* Gallery and modal styles */
@@ -274,6 +348,7 @@ nav li:first-child{
 #gallery {
     margin-top: 20px;
 }
+
 /* Image row and container styles */
 .container {
     width: 80%;
@@ -359,15 +434,14 @@ nav li:first-child{
     right: 20px;
 }
 
-/*Footer styles*/
 /* Footer styles */
 footer {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
     margin-top: auto;
     text-decoration: underline;
-    text-align: center; /* Center align the text */
-    padding: 20px 0; /* Add some padding for spacing */
+    text-align: center;
+    padding: 20px 0;
 }
 
 footer ul {
@@ -375,62 +449,57 @@ footer ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0; /* Remove default padding */
+    padding: 0;
 }
 
 footer li {
-    margin: 0 10px; /* Add spacing between list items */
+    margin: 0 10px;
 }
 
 footer a {
     text-decoration: none;
     color: black;
-    padding: 10px 20px; /* Adjust padding for links */
-    display: inline-block; /* Make links behave as blocks */
+    padding: 10px 20px;
+    display: inline-block;
 }
 
-
-/* Services*/
-.services-container{
+/* Services */
+.services-container {
     max-width: 80%;
     margin: 20px auto;
     overflow: hidden;
 }
-.services-row{
+
+.services-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-.services-content{
+
+.services-content {
     flex: 1;
     padding: 20px;
 }
-.services-content h2{
+
+.services-content h2 {
     color: #164394;
     margin-bottom: 10px;
     text-decoration: underline;
 }
-.services-content img{
+
+.services-content img {
     max-width: 500px;
     max-height: 280px;
     height: auto;
 }
-.services-text{
+
+.services-text {
     text-align: justify;
 }
 
-
-
-/*Thank you page*/
-.thankyou_header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.thankyou_body{
+/* Thank you page */
+.thankyou_header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -438,18 +507,18 @@ footer a {
     width: 100%;
 }
 
-
-/*Reviews Page CSS*/
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+.thankyou_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
+/* Reviews Page CSS */
 .review-container {
     max-width: 50%;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
     padding: 20px;
 }
 
@@ -472,11 +541,11 @@ body {
 }
 
 .review-item blockquote {
-    flex: 1; /* Take remaining space */
+    flex: 1;
     margin: 0;
     padding: 20px;
     background-color: #fff;
-    border: none; /* Remove blockquote border */
+    border: none;
 }
 
 blockquote p {
@@ -484,6 +553,7 @@ blockquote p {
     line-height: 1.6;
     margin: 0;
 }
+
 .review-author {
     font-weight: bold;
 }
