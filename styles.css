@@ -1,26 +1,32 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Added for more predictable sizing */
 }
 
 /* Nav bar */
 body {
     min-height: 100vh;
     background-color: #f7faf7;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    /* background-size, repeat, position are often set by specific sections like .intro */
     font-family: 'Segoe UI', tahoma, Geneva, Verdana, sans-serif;
+    display: flex; /* Added to help footer stick to bottom if content is short */
+    flex-direction: column; /* Added to help footer stick to bottom */
+}
+
+main { /* Added to help footer stick to bottom */
+    flex: 1;
 }
 
 .logo-img {
     max-height: 100px;
-    max-width: 100%;
+    max-width: 100%; /* Ensures logo is responsive within its container */
+    vertical-align: middle; /* Improves alignment if next to text/other inline elements */
 }
 
 nav {
     background-color: white;
-    box-shadow: 10px 3px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Adjusted shadow for a softer look */
 }
 
 nav ul {
@@ -32,26 +38,32 @@ nav ul {
 }
 
 nav li {
-    height: 50px;
+    /* height: 50px; Let content define height or use padding on <a> */
 }
 
 nav a {
-    height: 100%;
-    padding: 0 30px;
+    height: 100%; /* This might be too restrictive if li height is not set */
+    padding: 15px 30px; /* Increased padding for better clickability */
     text-decoration: none;
     display: flex;
     align-items: center;
     color: black;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 nav a:hover {
-    background-color: rgba(216, 216, 216, 0.61);
+    background-color: rgba(216, 216, 216, 0.3); /* Lightened hover */
 }
 
-nav li:first-child {
+nav li:first-child { /* This is the logo list item */
     margin-right: auto;
-    height: fit-content;
+    /* height: fit-content; Already handled by img max-height */
 }
+
+nav li:first-child a { /* Prevent padding on logo link if it's just the image */
+    padding: 5px 15px; /* Adjust padding for logo container as needed */
+}
+
 
 .sidebar {
     position: fixed;
@@ -60,13 +72,13 @@ nav li:first-child {
     height: 100vh;
     width: 250px;
     z-index: 999;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(3px);
-    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
+    backdrop-filter: blur(5px); /* Increased blur */
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.3); /* Softer shadow */
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: flex-start; /* Stays */
+    justify-content: flex-start; /* Stays */
 }
 
 .sidebar li {
@@ -75,38 +87,95 @@ nav li:first-child {
 
 .sidebar a {
     width: 100%;
+    padding: 15px 30px; /* Consistent padding */
 }
 
 .menu-button {
     display: none;
 }
 
-@media(max-width: 800px) {
+/* --- Potentially unused style --- */
+/* This rule targets <i> tags within .achievements .work.
+   Your index.html uses <svg> directly. If no other page uses this structure with <i>,
+   this can be removed. Commented out for review. */
+/*
+.achievements .work i {
+    width: fit-content;
+    font-size: 50px;
+    color: #333333;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    padding: 12px;
+}
+*/
+
+@media(max-width: 800px) { /* General tablet and larger phone styles */
     .hideOnMobile {
         display: none;
     }
 
     .menu-button {
-        display: block;
+        display: block; /* Changed from flex to block, as it's usually a list item */
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    /* Removed nav ul flex-direction column here, as the main nav items are hidden
+       and the sidebar handles the vertical list. If you intended the main bar
+       to stack before hiding, this would be different. */
 
-    nav a {
-        padding: 10px 20px;
-    }
-}
-
-@media(max-width: 400px) {
-    .sidebar {
-        width: 100%;
+    nav a { /* Adjust padding for smaller screens if needed */
+        padding: 15px 20px;
     }
 
     .intro h1 {
-        font-size: 40px;
+        font-size: 50px; /* Adjust hero text for medium screens */
+    }
+    .intro p {
+        font-size: 18px;
+    }
+
+    .achievements {
+        padding: 40px 20px; /* Less horizontal padding on tablets */
+        flex-wrap: wrap; /* Allow achievements to wrap if needed */
+    }
+    .achievements .work {
+        flex-basis: calc(50% - 20px); /* Two items per row on tablets, with gap */
+        margin-bottom: 20px;
+    }
+
+    .about-me {
+        padding: 40px 20px;
+        flex-direction: column; /* Stack about-me on tablets too */
+        text-align: center;
+    }
+    .about-me-text {
+        margin-bottom: 20px;
+    }
+    .about-me img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .photosaboveportfolio { /* Allow scrolling on tablet too if many logos */
+        padding: 10px 0;
+    }
+    .photosaboveportfolio img {
+        margin: 0 15px;
+        height: 70px;
+    }
+
+    .map iframe {
+        height: 400px;
+    }
+}
+
+
+@media(max-width: 480px) { /* More specific mobile styles (adjusted from 400px for broader coverage) */
+    .sidebar {
+        width: 100%; /* Full width sidebar on small mobiles */
+    }
+
+    .intro h1 {
+        font-size: 36px; /* Smaller for mobile */
         text-align: center;
         padding: 0 10px;
     }
@@ -119,90 +188,170 @@ nav li:first-child {
 
     .intro button {
         font-size: 16px;
-        padding: 10px 20px;
+        padding: 12px 22px; /* Slightly adjusted button padding */
     }
 
     .achievements {
         flex-direction: column;
-        padding: 20px 10px;
+        padding: 20px 15px;
     }
 
     .achievements .work {
         padding: 20px 0;
-        width: 100%;
+        width: 100%; /* Was already 100% */
         text-align: center;
+        margin-bottom: 20px; /* Added for spacing when stacked */
+        flex-basis: 100%; /* Ensure it takes full width if flex-wrap was active */
+    }
+    .achievements .work:last-child {
+        margin-bottom: 0; /* Remove margin from the last stacked item */
+    }
+    .achievements .work svg { /* Center the SVG */
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .achievements .work .work-heading {
+        font-size: 18px; /* Adjusted as per your request */
+    }
+    .achievements .work .work-text {
+        font-size: 14px;
+        max-width: 95%;  /* Allow text to use more width */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; /* Or justify, if preferred */
     }
 
     .about-me {
         flex-direction: column;
-        padding: 20px 10px;
+        padding: 20px 15px;
+        text-align: center; /* Center heading and paragraph */
     }
-
+    .about-me-text {
+        align-items: center; /* If inner elements have defined widths */
+        margin-bottom: 20px; /* Space between text and image */
+    }
     .about-me-text h2 {
         font-size: 24px;
     }
-
     .about-me-text p {
         font-size: 14px;
-        text-align: justify;
+        text-align: justify; /* Or center, if preferred */
+    }
+    .about-me img {
+        width: 270px; /* Original width */
+        max-width: 80%; /* Ensure it scales down nicely */
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .photosaboveportfolio {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row; /* Ensure items are in a row for scrolling */
+        overflow-x: auto;  /* Enable horizontal scrolling */
+        overflow-y: hidden; /* Hide vertical scrollbar */
+        padding: 10px 0px; /* Vertical padding, no horizontal as scrolling handles it */
+        align-items: center;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        /* Remove flex-direction: column from previous @media(max-width: 400px) if it was there */
+    }
+    .photosaboveportfolio img {
+        margin: 0 10px; /* Spacing between images */
+        border: 1px solid #000;
+        border-radius: 5px;
+        height: 60px; /* Adjust height for smaller mobiles */
+        width: auto;  /* Maintain aspect ratio */
+        flex-shrink: 0; /* Prevent images from shrinking */
     }
 
     .buttonundermap button {
         font-size: 16px;
-        padding: 10px 20px;
+        padding: 12px 22px;
     }
 
     .map iframe {
         height: 300px;
     }
 
+    /* Review page specific mobile styles from original */
     .review-container {
         max-width: 90%;
         padding: 10px;
     }
-
     .review-item {
         flex-direction: column;
         text-align: center;
     }
-
     .review-item img {
-        margin: 0 0 10px 0;
+        margin: 0 auto 10px auto; /* Center image and add bottom margin */
+        display: block;
+    }
+
+    /* Services page specific mobile styles */
+    .services-container {
+        max-width: 95%;
+    }
+    .services-row {
+        flex-direction: column !important; /* Important to override inline styles if any, or ensure specificity */
+        margin-bottom: 10px;
+    }
+    .services-row .services-content:nth-child(1) { /* Ensure correct order on mobile if reversed on desktop */
+        order: 1;
+    }
+    .services-row .services-content:nth-child(2) {
+        order: 2;
+    }
+    .services-content {
+        padding: 10px;
+        text-align: center;
+    }
+    .services-content img {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%; /* Ensure images are responsive */
+    }
+    .services-text {
+        text-align: justify; /* Or center */
     }
 }
 
-/* Main section */
+
+/* Main section - General Styles (Desktop First approach) */
 .intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 830px;
+    min-height: 500px; /* Use min-height instead of fixed height for responsiveness */
+    height: 80vh; /* Example: 80% of viewport height */
+    max-height: 830px; /* Cap the height */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(https://github.com/Vi166/Website/blob/main/Images/6.png?raw=true);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: #fff; /* Set default text color for this section */
+    padding: 20px; /* Add some padding */
 }
 
 .intro h1 {
-    font-family: sans-serif;
+    font-family: sans-serif; /* Consider a more specific font stack */
     font-size: 60px;
-    color: #fff;
+    /* color: #fff; Already set on .intro */
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 10px 0; /* Added bottom margin */
 }
 
 .intro p {
     font-size: 20px;
     color: #d1d1d1;
     text-transform: uppercase;
-    margin: 20px 0;
+    margin: 0 0 20px 0; /* Adjusted margin */
 }
 
 .intro button {
@@ -215,30 +364,38 @@ nav li:first-child {
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.intro button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 25px rgba(255, 255, 255, 0.5);
+}
+
 
 .achievements {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    padding: 40px 80px;
+    align-items: flex-start; /* Align items to the start for better text alignment if heights differ */
+    padding: 60px 80px; /* Increased padding */
+    gap: 20px; /* Add gap between achievement items */
 }
 
 .achievements .work {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 20px; /* Adjusted padding */
+    text-align: center; /* Center text within each work item */
+    flex: 1; /* Allow items to grow and shrink equally */
+    min-width: 200px; /* Minimum width for each item */
 }
 
-.achievements .work i {
-    width: fit-content;
-    font-size: 50px;
-    color: #333333;
-    border-radius: 50%;
-    border: 2px solid #333333;
-    padding: 12px;
+.achievements .work svg { /* Style SVGs directly */
+    width: 48px; /* Example size */
+    height: 48px; /* Example size */
+    fill: #333333; /* Use fill for SVGs */
+    margin-bottom: 15px; /* Space below icon */
 }
 
 .achievements .work .work-heading {
@@ -253,24 +410,26 @@ nav li:first-child {
     font-size: 15px;
     color: #585858;
     margin: 10px 0;
-    max-width: 70%;
-    text-align: center;
+    /* max-width: 70%; Removed, let flexbox handle width or set to 100% for stacking */
+    line-height: 1.6; /* Improved readability */
 }
 
 .about-me {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 100px;
-    gap: 20px;
+    padding: 60px 100px; /* Increased padding */
+    gap: 40px; /* Increased gap */
+    background-color: #fff; /* Add a background if desired */
 }
 
 .about-me img {
-    width: 270px;
+    width: 300px; /* Slightly increased size */
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 8px; /* Softer radius */
     object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 .about-me-text {
@@ -278,156 +437,219 @@ nav li:first-child {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    max-width: 600px; /* Limit text width for readability */
 }
 
 .about-me-text h2 {
     font-size: 30px;
     color: #333333;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 15px 0; /* Added bottom margin */
 }
 
 .about-me-text p {
-    font-size: 15px;
+    font-size: 16px; /* Slightly larger for readability */
     color: #585858;
-    margin: 10px 5px;
+    margin: 10px 0; /* Keep vertical margin */
+    line-height: 1.7; /* Improved readability */
 }
 
 .photosaboveportfolio {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 40px;
-    border: #000;
-    border-radius: 10px;
+    padding: 30px 40px; /* Increased padding */
+    /* border: #000; Invalid border property */
+    /* border-radius: 10px; */
+    background-color: #f0f0f0; /* Example background */
+    flex-wrap: wrap; /* Allow logos to wrap on medium screens if not scrolling */
+    gap: 20px;
 }
 
 .photosaboveportfolio img {
-    margin: 0 20px;
-    border: 1px solid #000;
+    margin: 0 10px; /* Original margin was 0 20px */
+    border: 1px solid #ddd; /* Softer border */
     border-radius: 5px;
+    height: 60px; /* Default height for logos */
+    width: auto;
+    transition: transform 0.2s ease;
 }
+.photosaboveportfolio img:hover {
+    transform: scale(1.05);
+}
+
 
 .buttonundermap {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px 20px; /* Increased padding */
 }
 
 .buttonundermap button {
     background-color: #b6eaf3;
     color: #000;
-    padding: 10px 25px;
+    padding: 12px 30px; /* Adjusted padding */
     border: none;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.buttonundermap button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Map */
 .map {
     width: 100%;
-    max-width: 100%;
-    margin: 20px auto;
+    /* max-width: 100%; Redundant */
+    margin: 20px auto; /* Keeps vertical margin */
 }
 
 .map iframe {
     width: 100%;
     height: 500px;
     border: 0;
+    display: block; /* Remove extra space below iframe */
 }
 
 /* Gallery and modal styles */
-#galleryModal {
-    display: none;
-}
-
-#gallery {
+#gallery { /* Used on portfolio.html */
     margin-top: 20px;
+    padding: 20px 0;
 }
 
-/* Image row and container styles */
-.container {
-    width: 80%;
-    margin: 1% auto;
+.container { /* Used on portfolio.html and contact.html */
+    width: 80%; /* Default for portfolio */
+    margin: 20px auto; /* Adjusted margin */
     color: #333;
 }
+/* For contact.html, .container is styled in contact.css, this might conflict or be overridden */
 
-.image-row {
+
+.image-row { /* Used in portfolio.html */
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 0.5%;
-    justify-content: space-between;
+    /* margin-bottom: 0.5%; */
+    justify-content: flex-start; /* Align to start */
+    gap: 10px; /* Use gap for spacing */
 }
 
-.image-container {
-    flex-basis: calc(33.33% - 8px);
-    margin-bottom: 8px;
+.image-container { /* Used in portfolio.html */
+    flex-basis: calc(33.333% - 10px); /* Adjust for gap, ensure it fits */
+    /* margin-bottom: 8px; Handled by gap */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure image respects border radius */
 }
 
 .image-container img {
     width: 100%;
-    height: auto;
+    height: auto; /* Or a fixed height for uniform look, then object-fit: cover */
     display: block;
-    border-radius: 8px;
+    /* border-radius: 8px; Applied to container */
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.image-container img:hover {
+    transform: scale(1.05);
 }
 
-.modal {
-    display: none;
+@media (max-width: 600px) {
+  .image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .image-container {
+    flex-basis: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+  .image-container:nth-last-child(1):nth-child(odd) {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.modal { /* General modal styling */
+    display: none; /* Modal is hidden by default */
     position: fixed;
-    z-index: 1;
+    z-index: 1000; /* Higher z-index */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
+    /* display: flex; REMOVED this line as per correction. JS will set display. */
+    /* align-items: center; These are fine for when it becomes flex via JS */
+    /* justify-content: center; These are fine for when it becomes flex via JS */
+}
+/* If JS sets display: block; for the modal: */
+.modal.active { /* Example class to add via JS to show modal */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.modal-content {
-    width: auto;
-    max-width: 90%;
-    max-height: 90%;
-    margin: auto;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+.modal-content { /* For the image itself */
+    /* width: auto; Handled by JS in your app.js */
+    /* max-width: 90%; Handled by JS */
+    /* max-height: 90%; Handled by JS */
+    margin: auto; /* This helps if parent is block/flex */
+    display: block; /* Default for img */
+    /* position: absolute; Not needed if parent is flex and centers */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
 }
 
 .close {
     position: absolute;
-    top: 15px;
+    top: 20px; /* Increased distance */
     right: 35px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.2s ease;
+}
+.close:hover {
+    color: #bbb;
 }
 
 .prev,
 .next {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%); /* Better vertical centering */
     width: auto;
     padding: 16px;
-    margin-top: -22px;
+    /* margin-top: -22px; Removed, use transform */
     color: white;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px; /* Slightly smaller */
     cursor: pointer;
+    border-radius: 0 3px 3px 0; /* Example styling */
+    background-color: rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+    user-select: none; /* Prevent text selection */
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.6);
 }
 
 .prev {
     left: 20px;
+    border-radius: 3px 0 0 3px; /* Example styling */
 }
 
 .next {
@@ -437,11 +659,11 @@ nav li:first-child {
 /* Footer styles */
 footer {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
-    margin-top: auto;
-    text-decoration: underline;
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    margin-top: auto; /* Pushes footer to bottom if main content is short (body needs display:flex, flex-direction:column) */
+    /* text-decoration: underline; Remove global underline */
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0; /* Increased padding */
 }
 
 footer ul {
@@ -450,76 +672,113 @@ footer ul {
     justify-content: center;
     align-items: center;
     padding: 0;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 footer li {
     margin: 0 10px;
-    padding: 10px 0; 
+    padding: 5px 0; /* Adjusted padding */
 }
 
 footer a {
     text-decoration: none;
     color: black;
-    padding: 10px 20px;
+    padding: 10px 15px; /* Adjusted padding */
     display: inline-block;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    position: relative;
 }
-
 footer a:hover {
-    color: #007bff; 
+    color: #007bff;
+    /* text-decoration: underline; Example hover effect */
+}
+footer a::after { /* Example underline hover effect */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+footer a:hover::after {
+    width: calc(100% - 30px); /* Width of padding */
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 600px) { /* Mobile footer */
     footer ul {
-        flex-direction: column; 
+        flex-direction: column;
     }
-    
     footer li {
-        margin: 5px 0; 
+        margin: 8px 0; /* Increased margin for stacked items */
     }
-
     footer a {
-        padding: 10px; 
-        width: 100%; 
+        padding: 12px; /* Larger touch target */
+        /* width: 100%; Only if you want full-width links */
+    }
+    footer a:hover::after { /* Adjust underline for mobile */
+        width: calc(100% - 24px);
     }
 }
-/* Services */
+
+/* Services Page specific styles */
 .services-container {
-    max-width: 80%;
-    margin: 20px auto;
-    overflow: hidden;
+    max-width: 80%; /* Default max-width */
+    margin: 40px auto; /* Increased margin */
+    overflow: hidden; /* Contains floats if any, though flex is used */
 }
 
 .services-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* Increased margin */
+    gap: 30px; /* Add gap between content and image */
+}
+/* For alternating layout: */
+.services-row:nth-child(even) .services-content:first-child {
+    order: 2;
+}
+.services-row:nth-child(even) .services-content:last-child {
+    order: 1;
 }
 
+
 .services-content {
-    flex: 1;
+    flex: 1; /* Allow content to take up space */
     padding: 20px;
+    /* min-width: 300px; Ensure content doesn't get too squished */
 }
 
 .services-content h2 {
     color: #164394;
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Increased margin */
     text-decoration: underline;
+    font-size: 24px; /* Consistent heading size */
 }
 
 .services-content img {
-    max-width: 500px;
-    max-height: 280px;
+    max-width: 100%; /* Make images responsive */
     height: auto;
+    border-radius: 8px; /* Add border radius */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+    display: block; /* Remove extra space */
 }
 
 .services-text {
     text-align: justify;
+    line-height: 1.7; /* Improved readability */
+    font-size: 16px;
 }
 
-/* Thank you page */
+
+/* --- Potentially unused styles for a Thank You page --- */
+/* If you don't have a thankyou.html or these classes aren't used,
+   they can be removed. Commented out for review. */
+/*
 .thankyou_header {
     display: flex;
     flex-direction: column;
@@ -535,46 +794,61 @@ footer a:hover {
     align-items: center;
     width: 100%;
 }
+*/
 
-/* Reviews Page CSS */
+/* Reviews Page CSS (from original) */
 .review-container {
-    max-width: 50%;
-    margin: 0 auto;
+    max-width: 60%; /* Adjusted for better desktop view */
+    margin: 40px auto; /* Increased margin */
     padding: 20px;
 }
 
 .review-item {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; /* Or space-between */
     align-items: center;
     margin-bottom: 40px;
-    padding: 20px;
+    padding: 30px; /* Increased padding */
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #e0e0e0; /* Softer border */
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Subtle shadow */
+    gap: 20px; /* Add gap */
 }
 
 .review-item img {
-    max-width: 250px;
+    max-width: 200px; /* Adjusted size */
     height: auto;
-    margin-right: 20px;
+    /* margin-right: 20px; Handled by gap */
+    border-radius: 5%; /* Circular images for reviews often look good */
+    object-fit: cover; /* If images are not square, to make them fit circle */
 }
 
 .review-item blockquote {
     flex: 1;
     margin: 0;
-    padding: 20px;
-    background-color: #fff;
+    padding: 0; /* Padding is on .review-item */
+    /* background-color: #fff; Already on parent */
     border: none;
+    font-style: italic; /* Common for quotes */
 }
 
 blockquote p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 0;
+    font-size: 17px; /* Slightly adjusted */
+    line-height: 1.7;
+    margin: 0 0 10px 0; /* Space between quote and author */
+    color: #333;
 }
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
 
 .review-author {
     font-weight: bold;
+    font-style: normal; /* Override italic from blockquote */
+    text-align: right; /* Align author to the right */
+    color: #164394;
+    margin-top: 10px;
 }

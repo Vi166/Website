@@ -12,21 +12,21 @@
 <body>
     <nav>
         <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="index.html" aria-label="Close sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li> 
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="reviews.html">Reviews</a></li> 
-            <li><a href="services.html">Services</a></li> 
-            <li><a href="portfolio.html">Portfolio</a></li> 
-            <li><a href="contact.html">Contact</a></li> 
-        </ul> 
+            <li onclick="hideSidebar()"><a href="index.html" aria-label="Close sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html">Home</a></li>
+            <!--<li><a href="reviews.html">Reviews</a></li>-->
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
         <ul>
             <li><a href="index.html"><img class="logo-img" src="Images/logo2.png" alt="Christines Curtains Logo"></a></li>
-            <li class="hideOnMobile"><a href="reviews.html">Reviews</a></li> 
-            <li class="hideOnMobile"><a href="services.html">Services</a></li> 
-            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li> 
-            <li class="hideOnMobile"><a href="contact.html">Contact</a></li> 
+            <li class="hideOnMobile"><!--<li><a href="reviews.html">Reviews</a></li>-->
+            <li class="hideOnMobile"><a href="services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
             <li class="menu-button" onclick="showSidebar()"><a href="#" aria-label="Open sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-        </ul> 
+        </ul>
     </nav>
     <main>
         <div class="intro">
@@ -34,7 +34,7 @@
             <p>Small business based in Kidderminster.</p>
             <a href="contact.html">
                 <button>Contact Me</button>
-            </a>    
+            </a>
         </div>
         <div class="achievements">
             <div class="work">
@@ -61,11 +61,11 @@
             <img src="Images/aboutmetest.jpg" alt="Christine working on curtains">
         </div>
         <div class="photosaboveportfolio">
-            <img src="Images/BeaumontLogo.png">
-            <img src="Images/FibreNaturelleLogo.jpg">
-            <img src="Images/Clarke&ClarkeLogo.png">
-            <img src="Images/HardyLogo.jpg">
-            <img src="Images/PrestigiousLogo.jpg">
+            <img src="Images/BeaumontLogo.png" alt="Beaumont Textiles Logo">
+            <img src="Images/FibreNaturelleLogo.jpg" alt="Fibre Naturelle Logo">
+            <img src="Images/Clarke&ClarkeLogo.png" alt="Clarke & Clarke Logo">
+            <img src="Images/HardyLogo.jpg" alt="Hardy Logo">
+            <img src="Images/PrestigiousLogo.jpg" alt="Prestigious Textiles Logo">
         </div>
         <div class="buttonundermap">
             <a href="portfolio.html">
@@ -74,38 +74,27 @@
         </div>
     </main>
 
-    <!-- Lightbox code, buttons and general usage -->
     <div id="galleryModal" class="modal" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="closeModal()">×</span>
         <img class="modal-content" id="modalImage" alt="Gallery image">
-        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-        <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <span class="prev" onclick="changeImage(-1)">❮</span>
+        <span class="next" onclick="changeImage(1)">❯</span>
     </div>
 
     <div class="map">
-        <iframe title="Kidderminster Map" allowfullscreen="" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48961.42715683284!2d-2.2469150499999997!3d52.381533499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48705e008e0543f7%3A0xa5f9970e44071e3!2sKidderminster!5e1!3m2!1sen!2suk!4v1703604188377!5m2!1sen!2suk&"></iframe>
-    </div>
+        <iframe title="Kidderminster Map" allowfullscreen="" loading="lazy" src="https://maps.google.com/maps?q=Kidderminster&hl=es;z=14&amp;output=embed"></iframe>
+        </div>
 
     <footer>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
+            <!--<li><a href="reviews.html">Reviews</a></li>-->
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </footer>
 
-    <script src="app.js"></script>    
-    <script>
-        function showSidebar(){
-            const sidebar= document.querySelector('.sidebar');
-            sidebar.style.display = 'flex';
-        }
-        function hideSidebar(){
-            const sidebar= document.querySelector('.sidebar');
-            sidebar.style.display = 'none';
-        }
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>

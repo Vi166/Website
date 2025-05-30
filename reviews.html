@@ -1,72 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
     <title>Reviews - Bespoke Curtains, Blinds, and Soft Furnishings | Christine's Curtains</title>
+    <meta name="description" content="Read reviews for Christine's Curtains. See what customers say about our bespoke curtains, Roman blinds, and soft furnishings.">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
-    <nav>
+<body> <nav>
         <ul class="sidebar">
-            <li onclick=hideSidebar()><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li> 
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="reviews.html">Reviews</a></li> 
-            <li><a href="services.html">Services</a></li> 
-            <li><a href="portfolio.html">Portfolio</a></li> 
-            <li><a href="contact.html">Contact</a></li> 
-        </ul> 
+            <li onclick="hideSidebar()"><a href="index.html" aria-label="Close sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html">Home</a></li>
+            <!--<li><a href="reviews.html">Reviews</a></li>-->
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
         <ul>
-            <li><a href="index.html"><img class="logo-img" src="Images/logo2.png" alt="logo"></a></li>
-            <li class="hideOnMobile"><a href="reviews.html">Reviews</a></li> 
-            <li class="hideOnMobile"><a href="services.html">Services</a></li> 
-            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li> 
-            <li class="hideOnMobile"><a href="contact.html">Contact</a></li> 
-            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-        </ul> 
+            <li><a href="index.html"><img class="logo-img" src="Images/logo2.png" alt="Christine's Curtains Logo"></a></li>
+            <li class="hideOnMobile"><!--<li><a href="reviews.html">Reviews</a></li>-->
+            <li class="hideOnMobile"><a href="services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#" aria-label="Open sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
     </nav>
-    <script>
-        function showSidebar(){
-            const sidebar= document.querySelector('.sidebar')
-            sidebar.style.display = 'flex'
-        }
-        function hideSidebar(){
-            const sidebar= document.querySelector('.sidebar')
-            sidebar.style.display = 'none'
-        }
-    </script>
-</body>
-<body>
-        <div class="review-container">
-            <div class="review-item">
-                <img src="Images/Dbreak.png" alt="[ADD AFTER]">
-                <blockquote>
-                    <p>"Thank you for the beautiful blinds! They were a hit at my dinner party, and I will definitely recommend your service to others. Looking forward to working with you again for my bathroom blinds."</p>
-                    <p class="review-author">Debbie Breakwell</p>
-                </blockquote>
-            </div>
-            <div class="review-item">
-                <blockquote>
-                    <p>"The custom curtains and cushions transformed our nursery into a cozy and inviting space, adding a perfect touch of charm and comfort."</p>
-                </blockquote>
-                <img src="Images/review2.jpg" alt="Review Image">
-            </div>
+
+    <div class="review-container">
+        <div class="review-item">
+            <img src="Images/Dbreak.png" alt="Reviewer image - Debbie Breakwell"> <blockquote>
+                <p>"Thank you for the beautiful blinds! They were a hit at my dinner party, and I will definitely recommend your service to others. Looking forward to working with you again for my bathroom blinds."</p>
+                <p class="review-author">Debbie Breakwell</p>
+            </blockquote>
         </div>
-        <footer>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </footer>
-        
-</body>
+        <div class="review-item">
+            <blockquote>
+                <p>"The custom curtains and cushions transformed our nursery into a cozy and inviting space, adding a perfect touch of charm and comfort."</p>
+                </blockquote>
+            <img src="Images/review2.jpg" alt="Nursery with custom curtains and cushions"> </div>
+    </div>
 
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <!--<li><a href="reviews.html">Reviews</a></li>-->
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
 
+    <script src="app.js"></script> </body>
 </html>
-
-    
