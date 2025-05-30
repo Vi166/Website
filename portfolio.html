@@ -12,63 +12,52 @@
 <body>
     <nav>
         <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li> 
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="reviews.html">Reviews</a></li> 
-            <li><a href="services.html">Services</a></li> 
-            <li><a href="portfolio.html">Portfolio</a></li> 
-            <li><a href="contact.html">Contact</a></li> 
-        </ul> 
+            <li onclick="hideSidebar()"><a href="index.html" aria-label="Close sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html">Home</a></li>
+            <!--<li><a href="reviews.html">Reviews</a></li>-->
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
         <ul>
             <li><a href="index.html"><img class="logo-img" src="Images/logo2.png" alt="Christine's Curtains logo"></a></li>
-            <li class="hideOnMobile"><a href="reviews.html">Reviews</a></li> 
-            <li class="hideOnMobile"><a href="services.html">Services</a></li> 
-            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li> 
-            <li class="hideOnMobile"><a href="contact.html">Contact</a></li> 
-            <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-        </ul> 
+            <li class="hideOnMobile"><!--<li><a href="reviews.html">Reviews</a></li>-->
+            <li class="hideOnMobile"><a href="services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#" aria-label="Open sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
     </nav>
-    <script>
-        function showSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = 'flex';
-        }
-        function hideSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = 'none';
-        }
-    </script>
+
     <section id="gallery">
         <div class="container">
-            <div class="image-row" id="gallery-row">
-                <div class="image-container"><img src="Images/1.png" alt="Bespoke curtain example 1" onclick="openModal('Images/1.png')"></div>
+            <div class="image-row" id="gallery-row"> <div class="image-container"><img src="Images/1.png" alt="Bespoke curtain example 1" onclick="openModal('Images/1.png')"></div>
                 <div class="image-container"><img src="Images/2.jpg" alt="Bespoke curtain example 2" onclick="openModal('Images/2.jpg')"></div>
                 <div class="image-container"><img src="Images/3.png" alt="Bespoke curtain example 3" onclick="openModal('Images/3.png')"></div>
                 <div class="image-container"><img src="Images/4.png" alt="Bespoke curtain example 4" onclick="openModal('Images/4.png')"></div>
-                <div class="image-container"><img src="Images/review2.jpg" alt="Roman blinds example 1" onclick="openModal('Images/review2.jpg')"></div>
+                <div class="image-container"><img src="Images/9.png" alt="Roman blinds example 1" onclick="openModal('Images/review2.jpg')"></div>
                 <div class="image-container"><img src="Images/6.png" alt="Roman blinds example 2" onclick="openModal('Images/6.png')"></div>
                 <div class="image-container"><img src="Images/5.jpg" alt="Soft furnishings example 1" onclick="openModal('Images/5.jpg')"></div>
                 <div class="image-container"><img src="Images/8.png" alt="Soft furnishings example 2" onclick="openModal('Images/8.png')"></div>
-                <div class="image-container"><img src="Images/9.png" alt="Fabric selection example" onclick="openModal('Images/9.png')"></div>
+                <div class="image-container"><img src="Images/review2.jpg" alt="Fabric selection example" onclick="openModal('Images/9.png')"></div>
             </div>
         </div>
-        <!--Lightbox code, buttons and general usage-->
-        <div id="galleryModal" class="modal">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img class="modal-content" id="modalImage">
-            <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <div id="galleryModal" class="modal"> <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage"> <span class="prev" onclick="changeImage(-1)">&#10094;</span>
             <span class="next" onclick="changeImage(1)">&#10095;</span>
         </div>
     </section>
+
     <footer>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
+            <!--<li><a href="reviews.html">Reviews</a></li>-->
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </footer>
-    <script src="app.js"></script>  
+
+    <script src="app.js"></script>
 </body>
 </html>
