@@ -455,29 +455,62 @@ nav li:first-child a { /* Prevent padding on logo link if it's just the image */
 }
 
 .photosaboveportfolio {
+    overflow: hidden;
+    position: relative;
+    background-color: #f0f0f0;
+    padding: 30px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 40px; /* Increased padding */
-    /* border: #000; Invalid border property */
-    /* border-radius: 10px; */
-    background-color: #f0f0f0; /* Example background */
-    flex-wrap: wrap; /* Allow logos to wrap on medium screens if not scrolling */
-    gap: 20px;
+}
+
+.photos-scroll {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Increased gap for desktop */
+    width: max-content;
+    justify-content: center;
 }
 
 .photosaboveportfolio img {
-    margin: 0 10px; /* Original margin was 0 20px */
-    border: 1px solid #ddd; /* Softer border */
-    border-radius: 5px;
-    height: 60px; /* Default height for logos */
+    height: 90px; /* Larger logos on desktop */
     width: auto;
-    transition: transform 0.2s ease;
-}
-.photosaboveportfolio img:hover {
-    transform: scale(1.05);
+    flex-shrink: 0;
+    margin: 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.2s;
 }
 
+.duplicate-logo {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .photosaboveportfolio {
+        padding: 10px 0;
+        display: block;
+    }
+    .photos-scroll {
+        gap: 20px;
+        animation: scroll-logos 25s linear infinite;
+    }
+    .photosaboveportfolio img {
+        height: 60px; /* Smaller logos on mobile */
+        margin: 0 10px;
+    }
+    .duplicate-logo {
+        display: inline;
+    }
+    @keyframes scroll-logos {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
 
 .buttonundermap {
     display: flex;
