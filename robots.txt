@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://christinescurtains.co.uk/sitemap.xml

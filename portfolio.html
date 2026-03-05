@@ -1,69 +1,476 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Portfolio - Bespoke Curtains & Blinds Gallery Kidderminster | Christine's Curtains</title>
+    <meta name="description" content="See our portfolio of handmade bespoke curtains, Roman blinds, soft furnishings and narrowboat curtains. Based in Kidderminster, Worcestershire. Call 07890 895245 for a free quote.">
+    <meta name="keywords" content="curtains portfolio Kidderminster, bespoke curtains gallery, Roman blinds examples, narrowboat curtains gallery, handmade curtains photos Worcestershire">
+    <link rel="canonical" href="https://christinescurtains.co.uk/portfolio.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://christinescurtains.co.uk/portfolio.html">
+    <meta property="og:title" content="Portfolio - Handmade Curtains & Blinds Gallery | Christine's Curtains, Kidderminster">
+    <meta property="og:description" content="Browse our gallery of bespoke handmade curtains, Roman blinds and soft furnishings. Based in Kidderminster. Free home visit & quote - 07890 895245.">
+    <meta property="og:image" content="https://christinescurtains.co.uk/Images/1.png">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Christine's Curtains">
+
+    <!-- Favicon -->
     <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-    <title>Portfolio - Bespoke Curtains, Blinds, and Soft Furnishings | Christine's Curtains</title>
-    <meta name="description" content="Browse our portfolio of bespoke curtains, Roman blinds, and soft furnishings. See the craftsmanship and elegance of Christine's Curtains in our gallery.">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://christinescurtains.co.uk/portfolio.html",
+      "url": "https://christinescurtains.co.uk/portfolio.html",
+      "name": "Portfolio - Bespoke Curtains & Blinds Gallery Kidderminster",
+      "description": "Gallery of handmade bespoke curtains, Roman blinds, soft furnishings and narrowboat curtains by Christine's Curtains, Kidderminster.",
+      "isPartOf": {"@type": "WebSite", "url": "https://christinescurtains.co.uk/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem","position": 1,"name": "Home","item": "https://christinescurtains.co.uk/"},
+          {"@type": "ListItem","position": 2,"name": "Portfolio","item": "https://christinescurtains.co.uk/portfolio.html"}
+        ]
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #f5f0e8;
+            --cream-dark: #ede6d6;
+            --warm-white: #faf8f4;
+            --charcoal: #2a2520;
+            --charcoal-light: #3d3730;
+            --sage: #7d8c6e;
+            --gold: #b8975a;
+            --gold-light: #d4b47a;
+            --text-body: #4a4440;
+            --text-muted: #7a6e68;
+            --border: #ddd5c5;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Jost', 'Segoe UI', sans-serif;
+            --nav-height: 80px;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { background: var(--warm-white); color: var(--text-body); font-family: var(--font-body); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+        /* NAV - identical to other pages */
+        nav { position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height); z-index: 100; background: rgba(250,248,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: all 0.4s; }
+        nav.scrolled { height: 64px; background: rgba(250,248,244,0.98); box-shadow: 0 2px 30px rgba(42,37,32,0.08); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo img { height: 56px; width: auto; }
+        .nav-logo { text-decoration: none; }
+        .nav-links { display: flex; list-style: none; align-items: center; }
+        .nav-links li a { font-family: var(--font-body); font-weight: 400; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); text-decoration: none; padding: 10px 20px; display: block; position: relative; transition: color 0.3s; }
+        .nav-links li a::after { content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+        .nav-links li a:hover { color: var(--gold); }
+        .nav-links li a:hover::after { width: calc(100% - 40px); }
+        .nav-cta { background: var(--charcoal) !important; color: var(--cream) !important; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--gold) !important; color: var(--charcoal) !important; }
+        .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+        .nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--charcoal); }
+        .sidebar-overlay { position: fixed; inset: 0; background: rgba(42,37,32,0.5); z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+        .sidebar { position: fixed; top: 0; right: 0; width: 280px; height: 100vh; background: var(--warm-white); z-index: 300; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; padding: 80px 40px 40px; border-left: 1px solid var(--border); }
+        .sidebar.open { transform: translateX(0); }
+        .sidebar-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--charcoal); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+        .sidebar a { font-family: var(--font-display); font-size: 28px; font-weight: 300; color: var(--charcoal); text-decoration: none; display: block; padding: 14px 0; border-bottom: 1px solid var(--border); transition: color 0.2s, padding-left 0.2s; }
+        .sidebar a:last-child { border-bottom: none; }
+        .sidebar a:hover { color: var(--gold); padding-left: 8px; }
+
+        /* PAGE HEADER */
+        .page-header { padding-top: calc(var(--nav-height) + 80px); padding-bottom: 80px; background: var(--cream); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(184,151,90,0.04) 60px, rgba(184,151,90,0.04) 61px), repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(184,151,90,0.04) 60px, rgba(184,151,90,0.04) 61px); }
+        .page-header-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; }
+        .breadcrumb { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--gold); }
+        .page-title { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); font-weight: 300; color: var(--charcoal); line-height: 1; letter-spacing: -0.02em; }
+        .page-title em { font-style: italic; color: var(--gold); }
+        .page-subtitle { font-size: 17px; font-weight: 300; color: var(--text-muted); max-width: 500px; margin-top: 24px; line-height: 1.8; }
+
+        /* FILTER TABS */
+        .filter-bar {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 0 40px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            font-family: var(--font-body);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            background: none;
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        /* GALLERY */
+        .gallery-section {
+            padding: 60px 0 120px;
+        }
+
+        .masonry-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            columns: 3;
+            column-gap: 16px;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .masonry-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: sepia(8%);
+            transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), filter 0.4s;
+        }
+
+        .masonry-item:hover img {
+            transform: scale(1.04);
+            filter: sepia(0%);
+        }
+
+        .masonry-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(42,37,32,0.7) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .masonry-item:hover .masonry-overlay { opacity: 1; }
+
+        .masonry-label {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: white;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* CTA */
+        .cta-strip {
+            background: var(--charcoal);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .cta-strip-inner { max-width: 600px; margin: 0 auto; padding: 0 40px; }
+        .cta-strip h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 300; color: white; margin-bottom: 16px; }
+        .cta-strip h2 em { font-style: italic; color: var(--gold-light); }
+        .cta-strip p { color: rgba(255,255,255,0.5); font-weight: 300; margin-bottom: 36px; font-size: 15px; line-height: 1.8; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--charcoal); text-decoration: none; font-family: var(--font-body); font-size: 12px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px 32px; transition: all 0.3s; position: relative; overflow: hidden; }
+        .btn-primary::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%); transition: transform 0.3s; }
+        .btn-primary:hover::before { transform: translateX(0); }
+        .btn-primary span, .btn-primary svg { position: relative; z-index: 1; }
+        .btn-primary svg { transition: transform 0.3s; }
+        .btn-primary:hover svg { transform: translateX(4px); }
+
+        /* MODAL */
+        .modal { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(10,8,6,0.95); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+        .modal.active { display: flex; }
+        .modal-content { max-width: 85vw; max-height: 85vh; object-fit: contain; display: block; box-shadow: 0 20px 80px rgba(0,0,0,0.5); }
+        .close { position: absolute; top: 24px; right: 32px; color: rgba(255,255,255,0.6); font-size: 32px; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; transition: color 0.2s; line-height: 1; }
+        .close:hover { color: white; }
+        .prev, .next { position: absolute; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.6); font-size: 24px; cursor: pointer; padding: 20px 16px; background: rgba(255,255,255,0.05); transition: all 0.2s; user-select: none; }
+        .prev:hover, .next:hover { background: rgba(255,255,255,0.12); color: white; }
+        .prev { left: 24px; }
+        .next { right: 24px; }
+
+        /* FOOTER */
+        footer { background: #3d3730; padding: 60px 0 40px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .footer-top { display: grid; grid-template-columns: 1fr auto; gap: 60px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: center; margin-bottom: 32px; }
+        .footer-brand { font-family: var(--font-display); font-size: 32px; font-weight: 300; color: white; font-style: italic; }
+        .footer-brand span { display: block; font-size: 12px; font-style: normal; font-family: var(--font-body); letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 4px; }
+        .footer-nav { list-style: none; display: flex; }
+        .footer-nav a { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; padding: 8px 20px; transition: color 0.2s; }
+        .footer-nav a:hover { color: var(--gold-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .masonry-grid { columns: 2; }
+        }
+
+        @media (max-width: 768px) {
+            :root { --nav-height: 68px; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .page-header { padding-top: calc(var(--nav-height) + 48px); padding-bottom: 48px; }
+            .page-header-inner, .masonry-grid, .cta-strip-inner, .footer-inner, .filter-bar { padding-left: 24px; padding-right: 24px; }
+            .masonry-grid { columns: 2; }
+            .footer-top { grid-template-columns: 1fr; gap: 24px; }
+            .footer-nav { flex-wrap: wrap; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (max-width: 480px) {
+            .masonry-grid { columns: 1; }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="index.html" aria-label="Close sidebar"><meta name="robots" content="noindex"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="index.html">Home</a></li>
-            <!--<li><a href="reviews.html">Reviews</a></li>-->
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <ul>
-            <li><a href="index.html"><img class="logo-img" src="Images/logo2.png" alt="Christine's Curtains logo"></a></li>
-            <li class="hideOnMobile"><!--<li><a href="reviews.html">Reviews</a></li>-->
-            <li class="hideOnMobile"><a href="services.html">Services</a></li>
-            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li>
-            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-            <li class="menu-button" onclick="showSidebar()"><a href="#" aria-label="Open sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-        </ul>
+
+    <nav id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Christine's Curtains"></a>
+            <ul class="nav-links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+            </ul>
+            <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
-    <section id="gallery">
-        <div class="container">
-            <div class="image-row" id="gallery-row">
-                <div class="image-container"><img src="Images/1.png" alt="Bespoke curtain example 1" onclick="openModal('Images/1.png')"></div>
-                <div class="image-container"><img src="Images/2.jpg" alt="Bespoke curtain example 2" onclick="openModal('Images/2.jpg')"></div>
-                <div class="image-container"><img src="Images/3.png" alt="Bespoke curtain example 3" onclick="openModal('Images/3.png')"></div>
-                <div class="image-container"><img src="Images/4.png" alt="Bespoke curtain example 4" onclick="openModal('Images/4.png')"></div>
-                <div class="image-container"><img src="Images/9.png" alt="Roman blinds example 1" onclick="openModal('Images/review2.jpg')"></div>
-                <div class="image-container"><img src="Images/6.png" alt="Roman blinds example 2" onclick="openModal('Images/6.png')"></div>
-                <div class="image-container"><img src="Images/5.jpg" alt="Soft furnishings example 1" onclick="openModal('Images/5.jpg')"></div>
-                <div class="image-container"><img src="Images/8.png" alt="Soft furnishings example 2" onclick="openModal('Images/8.png')"></div>
-                <div class="image-container"><img src="Images/review2.jpg" alt="Fabric selection example" onclick="openModal('Images/9.png')"></div>
-            </div>
-            <div class="buttonundermap" style="margin-top: 30px; text-align: center;">
-                <a href="contact.html">
-                    <button>Contact Me</button>
-                </a>
-            </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="sidebarClose">×</button>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <header class="page-header">
+        <div class="page-header-inner">
+            <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Portfolio</p>
+            <h1 class="page-title"><em>Portfolio</em></h1>
+            <p class="page-subtitle">A selection of recent work. Every piece handmade, every installation personal.</p>
         </div>
-        <div id="galleryModal" class="modal"> <span class="close" onclick="closeModal()">&times;</span>
-            <img class="modal-content" id="modalImage"> <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-            <span class="next" onclick="changeImage(1)">&#10095;</span>
+    </header>
+
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="curtains">Curtains</button>
+        <button class="filter-btn" data-filter="blinds">Roman Blinds</button>
+        <button class="filter-btn" data-filter="soft">Soft Furnishings</button>
+    </div>
+
+    <section class="gallery-section">
+        <div class="masonry-grid" id="masonryGrid">
+            <div class="masonry-item" data-category="curtains" onclick="openModal('Images/1.png')">
+                <img src="Images/1.png" alt="Bespoke curtain example 1">
+                <div class="masonry-overlay"><span class="masonry-label">Bespoke Curtains</span></div>
+            </div>
+            <div class="masonry-item" data-category="blinds" onclick="openModal('Images/2.jpg')">
+                <img src="Images/4.png" alt="Roman blind example">
+                <div class="masonry-overlay"><span class="masonry-label">Roman Blind</span></div>
+            </div>
+            <div class="masonry-item" data-category="curtains" onclick="openModal('Images/8.png')">
+                <img src="Images/8.png" alt="Bespoke curtain example 3">
+                <div class="masonry-overlay"><span class="masonry-label">Bespoke Curtains</span></div>
+            </div>
+            <div class="masonry-item" data-category="soft" onclick="openModal('Images/3.png')">
+                <img src="Images/3.png" alt="Soft furnishings">
+                <div class="masonry-overlay"><span class="masonry-label">Soft Furnishings</span></div>
+            </div>
+            <div class="masonry-item" data-category="blinds" onclick="openModal('Images/9.png')">
+                <img src="Images/9.png" alt="Roman blind example">
+                <div class="masonry-overlay"><span class="masonry-label">Roman Blind</span></div>
+            </div>
+            <div class="masonry-item" data-category="curtains" onclick="openModal('Images/5.jpg')">
+                <img src="Images/5.jpg" alt="Curtain detail">
+                <div class="masonry-overlay"><span class="masonry-label">Curtains</span></div>
+            </div>
+            <div class="masonry-item" data-category="soft" onclick="openModal('Images/review2.jpg')">
+                <img src="Images/review2.jpg" alt="Nursery soft furnishings">
+                <div class="masonry-overlay"><span class="masonry-label">Nursery Furnishings</span></div>
+            </div>
+            <div class="masonry-item" data-category="curtains" onclick="openModal('Images/2.jpg')">
+                <img src="Images/2.jpg" alt="Curtain example">
+                <div class="masonry-overlay"><span class="masonry-label">Bespoke Curtains</span></div>
+            </div>
+            <div class="masonry-item" data-category="soft" onclick="openModal('Images/6.png')">
+                <img src="Images/6.png" alt="Handmade cushions">
+                <div class="masonry-overlay"><span class="masonry-label">Cushions</span></div>
+            </div>
         </div>
     </section>
 
+    <div class="cta-strip">
+        <div class="cta-strip-inner">
+            <h2>Like what you <em>see?</em></h2>
+            <p>Get in touch to discuss your project. I'd love to help transform your space with something made just for you.</p>
+            <a href="contact.html" class="btn-primary">
+                <span>Get in Touch</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+
     <footer>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <!--<li><a href="reviews.html">Reviews</a></li>-->
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">Christine's Curtains<span>Kidderminster, England</span></div>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2025 Christine's Curtains. All rights reserved.</p>
+                <address class="footer-location" style="font-style:normal;font-size:12px;color:rgba(255,255,255,0.3);">
+                    101 Yellowhammer Court, Kidderminster, DY10 4RP &nbsp;|&nbsp;
+                    <a href="tel:07890895245" style="color:inherit;text-decoration:none;">07890 895245</a>
+                </address>
+            </div>
+        </div>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- MODAL -->
+    <div id="galleryModal" class="modal" role="dialog" aria-label="Image gallery">
+        <span class="close" onclick="closeModal()">×</span>
+        <img class="modal-content" id="modalImage" alt="Gallery image">
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+    <script>
+        // Nav
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+        // Sidebar
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebarClose');
+        function openSidebar() { sidebar.classList.add('open'); sidebarOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeSidebar() { sidebar.classList.remove('open'); sidebarOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+        hamburgerBtn.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Scroll reveal for masonry
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 80);
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.05 });
+        document.querySelectorAll('.masonry-item').forEach(el => observer.observe(el));
+
+        // Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.masonry-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                items.forEach(item => {
+                    const show = filter === 'all' || item.dataset.category === filter;
+                    item.style.opacity = show ? '1' : '0.2';
+                    item.style.pointerEvents = show ? 'all' : 'none';
+                    item.style.transform = show ? 'translateY(0)' : 'translateY(8px)';
+                });
+            });
+        });
+
+        // Gallery Modal
+        let currentImageIndex = 0;
+        let galleryImageSources = [];
+
+        function initGallery() {
+            const imgs = document.querySelectorAll('.masonry-item img');
+            galleryImageSources = Array.from(imgs).map(img => img.src);
+        }
+
+        function openModal(src) {
+            initGallery();
+            const modal = document.getElementById('galleryModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.add('active');
+            modal.style.display = 'flex';
+            modalImg.src = src;
+            currentImageIndex = galleryImageSources.findIndex(s => s.endsWith(src.replace('Images/', '')));
+            if (currentImageIndex === -1) currentImageIndex = 0;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.remove('active');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function changeImage(dir) {
+            if (!galleryImageSources.length) return;
+            currentImageIndex = (currentImageIndex + dir + galleryImageSources.length) % galleryImageSources.length;
+            document.getElementById('modalImage').src = galleryImageSources[currentImageIndex];
+        }
+
+        document.addEventListener('keydown', e => {
+            const modal = document.getElementById('galleryModal');
+            if (modal.style.display === 'flex') {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+            }
+        });
+        document.getElementById('galleryModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+    </script>
 </body>
 </html>
