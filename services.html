@@ -1,92 +1,535 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Bespoke Curtains, Roman Blinds & Soft Furnishings Kidderminster | Christine's Curtains</title>
+    <meta name="description" content="Handmade bespoke curtains, Roman blinds, soft furnishings & specialist narrowboat curtains in Kidderminster. Free home visit & quote. 25+ years experience. Call 07890 895245.">
+    <meta name="keywords" content="bespoke curtains Kidderminster, Roman blinds Kidderminster, made to measure curtains Worcestershire, narrowboat curtains, soft furnishings Kidderminster, handmade blinds Kidderminster">
+    <link rel="canonical" href="https://christinescurtains.co.uk/services.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://christinescurtains.co.uk/services.html">
+    <meta property="og:title" content="Services - Bespoke Curtains & Blinds Kidderminster | Christine's Curtains">
+    <meta property="og:description" content="Handmade bespoke curtains, Roman blinds, narrowboat curtains & soft furnishings in Kidderminster. Free home visit. 25+ years experience.">
+    <meta property="og:image" content="https://christinescurtains.co.uk/Images/services3.png">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Christine's Curtains">
+
+    <!-- Favicon -->
     <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-    <title>Our Services - Bespoke Curtains, Blinds, Soft Furnishings | Christine's Curtains</title>
-    <meta name="description" content="Explore our range of bespoke curtains, Roman blinds, and soft furnishings. Handcrafted with precision to enhance your home's decor.">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://christinescurtains.co.uk/services.html",
+      "url": "https://christinescurtains.co.uk/services.html",
+      "name": "Services - Bespoke Curtains & Blinds Kidderminster",
+      "description": "Handmade bespoke curtains, Roman blinds, soft furnishings and specialist narrowboat curtains in Kidderminster, Worcestershire.",
+      "isPartOf": {"@type": "WebSite", "url": "https://christinescurtains.co.uk/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem","position": 1,"name": "Home","item": "https://christinescurtains.co.uk/"},
+          {"@type": "ListItem","position": 2,"name": "Services","item": "https://christinescurtains.co.uk/services.html"}
+        ]
+      },
+      "mainEntity": {
+        "@type": "Service",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Christine's Curtains",
+          "telephone": "07890895245",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "101 Yellowhammer Court",
+            "addressLocality": "Kidderminster",
+            "addressRegion": "Worcestershire",
+            "postalCode": "DY10 4RP",
+            "addressCountry": "GB"
+          }
+        },
+        "serviceType": ["Bespoke Curtains", "Roman Blinds", "Soft Furnishings", "Narrowboat Curtains", "Canal Barge Blinds"],
+        "areaServed": {"@type": "AdministrativeArea", "name": "Worcestershire"}
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #f5f0e8;
+            --cream-dark: #ede6d6;
+            --warm-white: #faf8f4;
+            --charcoal: #2a2520;
+            --charcoal-light: #3d3730;
+            --sage: #7d8c6e;
+            --gold: #b8975a;
+            --gold-light: #d4b47a;
+            --text-body: #4a4440;
+            --text-muted: #7a6e68;
+            --border: #ddd5c5;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Jost', 'Segoe UI', sans-serif;
+            --nav-height: 80px;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--warm-white);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            font-weight: 300;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+            z-index: 100; background: rgba(250,248,244,0.92); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); transition: all 0.4s;
+        }
+        nav.scrolled { height: 64px; background: rgba(250,248,244,0.98); box-shadow: 0 2px 30px rgba(42,37,32,0.08); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo img { height: 56px; width: auto; }
+        .nav-logo { text-decoration: none; }
+        .nav-links { display: flex; list-style: none; align-items: center; }
+        .nav-links li a { font-family: var(--font-body); font-weight: 400; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); text-decoration: none; padding: 10px 20px; display: block; position: relative; transition: color 0.3s; }
+        .nav-links li a::after { content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+        .nav-links li a:hover { color: var(--gold); }
+        .nav-links li a:hover::after { width: calc(100% - 40px); }
+        .nav-cta { background: var(--charcoal) !important; color: var(--cream) !important; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--gold) !important; color: var(--charcoal) !important; }
+        .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+        .nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--charcoal); }
+        .sidebar-overlay { position: fixed; inset: 0; background: rgba(42,37,32,0.5); z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+        .sidebar { position: fixed; top: 0; right: 0; width: 280px; height: 100vh; background: var(--warm-white); z-index: 300; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; padding: 80px 40px 40px; border-left: 1px solid var(--border); }
+        .sidebar.open { transform: translateX(0); }
+        .sidebar-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--charcoal); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+        .sidebar a { font-family: var(--font-display); font-size: 28px; font-weight: 300; color: var(--charcoal); text-decoration: none; display: block; padding: 14px 0; border-bottom: 1px solid var(--border); transition: color 0.2s, padding-left 0.2s; }
+        .sidebar a:last-child { border-bottom: none; }
+        .sidebar a:hover { color: var(--gold); padding-left: 8px; }
+
+        /* PAGE HEADER */
+        .page-header {
+            padding-top: calc(var(--nav-height) + 80px);
+            padding-bottom: 80px;
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(184,151,90,0.04) 60px, rgba(184,151,90,0.04) 61px), repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(184,151,90,0.04) 60px, rgba(184,151,90,0.04) 61px);
+        }
+        .page-header-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; }
+        .breadcrumb { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--gold); }
+        .page-title { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); font-weight: 300; color: var(--charcoal); line-height: 1; letter-spacing: -0.02em; }
+        .page-title em { font-style: italic; color: var(--gold); }
+        .page-subtitle { font-size: 17px; font-weight: 300; color: var(--text-muted); max-width: 500px; margin-top: 24px; line-height: 1.8; }
+
+        /* SERVICES */
+        .services-page { background: var(--warm-white); }
+
+        .service-block {
+            border-bottom: 1px solid var(--border);
+        }
+        .service-block:last-child { border-bottom: none; }
+
+        .service-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .service-block:nth-child(even) .service-text { order: 2; }
+        .service-block:nth-child(even) .service-img { order: 1; }
+
+        .service-number {
+            font-family: var(--font-display);
+            font-size: 120px;
+            font-weight: 300;
+            color: var(--cream-dark);
+            line-height: 1;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            user-select: none;
+            z-index: 0;
+        }
+
+        .service-text { position: relative; }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+
+        .service-title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 300;
+            color: var(--charcoal);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .service-desc {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .service-features li::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .service-img {
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            display: block;
+            filter: sepia(8%) contrast(1.02);
+            transition: filter 0.4s;
+        }
+
+        .service-img:hover img { filter: sepia(0%) contrast(1.05); }
+
+        .service-img::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            right: -12px;
+            width: 80%;
+            height: 80%;
+            border: 1px solid var(--gold-light);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* CTA BOTTOM */
+        .cta-section {
+            background: var(--charcoal);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(184,151,90,0.12) 0%, transparent 70%); pointer-events: none; }
+        .cta-inner { max-width: 700px; margin: 0 auto; padding: 0 40px; text-align: center; position: relative; z-index: 1; }
+        .cta-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); font-weight: 300; color: white; line-height: 1.1; margin-bottom: 20px; }
+        .cta-title em { font-style: italic; color: var(--gold-light); }
+        .cta-text { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.55); margin-bottom: 44px; line-height: 1.8; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--charcoal); color: var(--cream); text-decoration: none; font-family: var(--font-body); font-size: 12px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px 32px; transition: all 0.3s; position: relative; overflow: hidden; }
+        .btn-primary::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%); transition: transform 0.3s; }
+        .btn-primary:hover::before { transform: translateX(0); }
+        .btn-primary span, .btn-primary svg { position: relative; z-index: 1; }
+        .btn-primary svg { transition: transform 0.3s; }
+        .btn-primary:hover svg { transform: translateX(4px); }
+        .cta-section .btn-primary { background: white; color: var(--charcoal); }
+        .cta-section .btn-primary::before { background: var(--gold); }
+        .cta-phone { font-family: var(--font-display); font-size: 28px; font-weight: 300; color: var(--gold-light); display: block; margin-top: 24px; letter-spacing: 0.04em; text-decoration: none; transition: color 0.2s; }
+        .cta-phone:hover { color: white; }
+
+        /* FOOTER */
+        footer { background: var(--charcoal-light, #3d3730); padding: 60px 0 40px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .footer-top { display: grid; grid-template-columns: 1fr auto; gap: 60px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: center; margin-bottom: 32px; }
+        .footer-brand { font-family: var(--font-display); font-size: 32px; font-weight: 300; color: white; font-style: italic; }
+        .footer-brand span { display: block; font-size: 12px; font-style: normal; font-family: var(--font-body); letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 4px; }
+        .footer-nav { list-style: none; display: flex; }
+        .footer-nav a { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; padding: 8px 20px; transition: color 0.2s; }
+        .footer-nav a:hover { color: var(--gold-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+        .footer-location { font-size: 12px; color: rgba(255,255,255,0.3); display: flex; align-items: center; gap: 6px; }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .service-inner { gap: 48px; padding: 72px 40px; }
+            .service-img img { height: 400px; }
+        }
+
+        @media (max-width: 768px) {
+            :root { --nav-height: 68px; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .page-header { padding-top: calc(var(--nav-height) + 48px); padding-bottom: 48px; }
+            .page-header-inner, .service-inner, .cta-inner, .footer-inner { padding-left: 24px; padding-right: 24px; }
+            .service-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+            .service-block:nth-child(even) .service-text { order: 0; }
+            .service-block:nth-child(even) .service-img { order: 0; }
+            .service-img img { height: 300px; }
+            .service-img::after { display: none; }
+            .footer-top { grid-template-columns: 1fr; gap: 24px; }
+            .footer-nav { flex-wrap: wrap; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="index.html" aria-label="Close sidebar"><meta name="robots" content="noindex"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="index.html">Home</a></li>
-            <!--<li><a href="reviews.html">Reviews</a></li>-->
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <ul>
-            <li><a href="index.html"><img class="logo-img" src="Images/logo2.png" alt="Christine's Curtains logo"></a></li>
-            <li class="hideOnMobile"><!--<li><a href="reviews.html">Reviews</a></li>-->
-            <li class="hideOnMobile"><a href="services.html">Services</a></li>
-            <li class="hideOnMobile"><a href="portfolio.html">Portfolio</a></li>
-            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-            <li class="menu-button" onclick="showSidebar()"><a href="#" aria-label="Open sidebar"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-        </ul>
+
+    <nav id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Christine's Curtains"></a>
+            <ul class="nav-links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+            </ul>
+            <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
-    <div class="services-container">
-        <div class="services-row">
-            <div class="services-content">
-                <h2>Hand Made Bespoke Curtains</h2>
-                <p class="services-text">Transform your living spaces with my bespoke curtain services. As a dedicated curtain maker, I offer a wide range of styles, from classic to contemporary, ensuring a perfect fit for your home decor. I'll work with you personally to select the ideal fabrics, designs, and finishes, providing both functionality and elegance.</p>
-            </div>
-            <div class="services-content">
-                <img src="Images/services3.png" alt="Bespoke curtains example">
-            </div>
-        </div>
-
-        <div class="services-row">
-            <div class="services-content">
-                <img src="Images/services2.jpg" alt="Roman blinds example">
-            </div>
-            <div class="services-content">
-                <h2>Roman Blinds</h2>
-                <p class="services-text">Add a touch of sophistication to any room with my custom Roman blinds. Crafted with precision, these blinds combine beauty and practicality, offering a stylish alternative to traditional window treatments. Choose from an array of luxurious fabrics and personalized details to create a truly unique look.</p>
-            </div>
-        </div>
-
-        <div class="services-row">
-            <div class="services-content">
-                <h2>Soft Furnishings</h2>
-                <p class="services-text">Complete your home’s aesthetic with my exquisite soft furnishings. From custom cushions and throws to tailored upholstery, I create pieces that complement your interior design. Every item is handcrafted to enhance comfort and add a distinctive charm to your living spaces.</p>
-            </div>
-            <div class="services-content">
-                <img src="Images/services4.jpg" alt="Soft furnishings example">
-            </div>
-        </div>
-
-        <div class="services-row">
-            <div class="services-content">
-                <img src="Images/services1.jpg" alt="Fabric selection">
-            </div>
-            <div class="services-content">
-                <h2>Fabrics</h2>
-                <p class="services-text">Discover a vast selection of high-quality fabrics perfect for all your decorating needs. Whether you’re looking for bold patterns or subtle hues, my curated collection features something for every taste. I'll assist you in choosing the ideal fabrics to bring your vision to life.</p>
-            </div>
-        </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="sidebarClose">×</button>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
     </div>
 
-    <div class="buttonundermap" style="margin-top: 30px; text-align: center;">
-                <a href="contact.html">
-                    <button>Contact Me</button>
-                </a>
-    </div>
+    <header class="page-header">
+        <div class="page-header-inner">
+            <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</p>
+            <h1 class="page-title">Our<br><em>Services</em></h1>
+            <p class="page-subtitle">Bespoke made-to-measure curtains, Roman blinds & soft furnishings in Kidderminster - and specialist fitting for narrowboats & canal barges.</p>
+        </div>
+    </header>
+
+    <main class="services-page">
+
+        <!-- Curtains -->
+        <div class="service-block">
+            <div class="service-inner">
+                <div class="service-text reveal">
+                    <p class="section-label">Service 01</p>
+                    <h2 class="service-title">Handmade Bespoke Curtains</h2>
+                    <p class="service-desc">Transform your living spaces with my bespoke curtain services. I offer a wide range of styles - from classic pinch pleat to contemporary eyelet - ensuring a perfect fit for your home decor.</p>
+                    <p class="service-desc">I'll work with you personally to select the ideal fabrics, designs, and finishes, providing both functionality and elegance that store-bought curtains simply can't match.</p>
+                    <ul class="service-features">
+                        <li>Made to your exact measurements</li>
+                        <li>Full choice of heading styles</li>
+                        <li>Wide fabric selection from top suppliers</li>
+                        <li>Interlined & blackout options available</li>
+                        <li>Specialist fitting for narrowboats & barges</li>
+                    </ul>
+                </div>
+                <div class="service-img reveal reveal-delay-1">
+                    <img src="Images/1.png" alt="Bespoke curtains">
+                </div>
+            </div>
+        </div>
+
+        <!-- Roman Blinds -->
+        <div class="service-block" style="background: var(--cream);">
+            <div class="service-inner">
+                <div class="service-text reveal">
+                    <p class="section-label">Service 02</p>
+                    <h2 class="service-title">Roman Blinds</h2>
+                    <p class="service-desc">Add a touch of sophistication to any room with my custom Roman blinds. Crafted with precision, these blinds combine beauty and practicality, offering a stylish alternative to traditional window treatments.</p>
+                    <p class="service-desc">Choose from an array of luxurious fabrics and personalised details to create a truly unique look that elevates any window.</p>
+                    <ul class="service-features">
+                        <li>Flat, hobbled, and relaxed Roman styles</li>
+                        <li>Child-safe mechanism options</li>
+                        <li>Lined, unlined, or blackout</li>
+                        <li>Patterned & plain fabric options</li>
+                    </ul>
+                </div>
+                <div class="service-img reveal reveal-delay-1">
+                    <img src="Images/services2.jpg" alt="Roman blinds">
+                </div>
+            </div>
+        </div>
+
+<!-- Narrowboats & Barges -->
+        <div class="service-block" style="background: var(--charcoal); color: white;">
+            <div class="service-inner">
+                <div class="service-text reveal">
+                    <p class="section-label" style="color: var(--gold-light);">
+                        <span style="display:block;width:32px;height:1px;background:var(--gold-light);"></span>
+                        Specialist Service
+                    </p>
+                    <h2 class="service-title" style="color: white;">Narrowboats<br>& Canal Barges</h2>
+                    <p class="service-desc" style="color: rgba(255,255,255,0.6);">Boat windows are unlike any other - curved frames, compact dimensions, and high-moisture environments demand a specialist approach. I've been making curtains and blinds for narrowboats and canal barges for years, and I understand exactly what works in these beautiful, characterful spaces.</p>
+                    <p class="service-desc" style="color: rgba(255,255,255,0.6);">I visit your boat to take precise measurements in person, and I'll help you choose fabrics that are practical as well as beautiful - resistant to condensation and built to last on the water.</p>
+                    <ul class="service-features">
+                        <li style="color: rgba(255,255,255,0.6);">On-site measurement visits</li>
+                        <li style="color: rgba(255,255,255,0.6);">Curved & porthole window solutions</li>
+                        <li style="color: rgba(255,255,255,0.6);">Moisture-resistant fabric options</li>
+                        <li style="color: rgba(255,255,255,0.6);">Roman blinds & curtains both available</li>
+                        <li style="color: rgba(255,255,255,0.6);">Narrowboats, widebeams & traditional barges</li>
+                    </ul>
+                </div>
+                <div class="service-img reveal reveal-delay-1">
+                    <img src="Images/8.png" alt="Bespoke curtains fitted on a narrowboat by Christine's Curtains, Kidderminster">
+                    <blockquote style="margin-top:20px;padding:20px 24px;border-left:2px solid var(--gold);background:rgba(184,151,90,0.06);">
+                        <p style="font-family:var(--font-display);font-size:20px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:10px;">"The curtains transformed our boat into a proper home on the water."</p>
+                        <cite style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-style:normal;">- Narrowboat Client</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Furnishings -->
+        <div class="service-block">
+            <div class="service-inner">
+                <div class="service-text reveal">
+                    <p class="section-label">Service 03</p>
+                    <h2 class="service-title">Soft Furnishings</h2>
+                    <p class="service-desc">Complete your home's aesthetic with my exquisite soft furnishings. From custom cushions and throws to tailored tie-backs and pelmets, I create pieces that complement your interior design.</p>
+                    <p class="service-desc">Every item is handcrafted to enhance comfort and add a distinctive charm to your living spaces - and can be made to coordinate perfectly with your curtains or blinds.</p>
+                    <ul class="service-features">
+                        <li>Cushion covers & pad filling</li>
+                        <li>Matching tie-backs & pelmets</li>
+                        <li>Throws & bed runners</li>
+                        <li>Fabric coordination service</li>
+                    </ul>
+                </div>
+                <div class="service-img reveal reveal-delay-1">
+                    <img src="Images/3.png" alt="Soft furnishings">
+                </div>
+            </div>
+        </div>
+
+        <!-- Fabrics -->
+        <div class="service-block" style="background: var(--cream);">
+            <div class="service-inner">
+                <div class="service-text reveal">
+                    <p class="section-label">Service 04</p>
+                    <h2 class="service-title">Fabric Selection</h2>
+                    <p class="service-desc">Discover a vast selection of high-quality fabrics perfect for all your decorating needs. Whether you're looking for bold patterns or subtle hues, my curated collection features something for every taste.</p>
+                    <p class="service-desc">I work with leading fabric houses including Beaumont Textiles, Fibre Naturelle, Clarke & Clarke, Hardy, and Prestigious Textiles - so you have access to the very best ranges on the market.</p>
+                    <ul class="service-features">
+                        <li>Hundreds of fabric options</li>
+                        <li>Swatches available to take home</li>
+                        <li>Expert colour matching advice</li>
+                        <li>Sustainable & natural fabric options</li>
+                    </ul>
+                </div>
+                <div class="service-img reveal reveal-delay-1">
+                    <img src="Images/services1.jpg" alt="Fabric selection">
+                </div>
+            </div>
+        </div>
+        
+
+    </main>
+
+    <section class="cta-section">
+        <div class="cta-inner reveal">
+            <p class="section-label" style="justify-content:center; color: var(--gold-light);">Start Your Project</p>
+            <h2 class="cta-title">Ready to <em>transform</em> your space?</h2>
+            <p class="cta-text">Get in touch to discuss your requirements. I offer a personal, friendly service from initial consultation through to installation.</p>
+            <a href="contact.html" class="btn-primary" style="margin: 0 auto; display: inline-flex;">
+                <span>Get in Touch</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:07890895245" class="cta-phone">07890 895245</a>
+        </div>
+    </section>
 
     <footer>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <!--<li><a href="reviews.html">Reviews</a></li>-->
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">Christine's Curtains<span>Bespoke Curtains & Blinds, Kidderminster</span></div>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2025 Christine's Curtains. All rights reserved.</p>
+                <address class="footer-location" style="font-style:normal;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    101 Yellowhammer Court, Kidderminster, DY10 4RP &nbsp;|&nbsp;
+                    <a href="tel:07890895245" style="color:inherit;text-decoration:none;">07890 895245</a>
+                </address>
+            </div>
+        </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script>
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebarClose');
+        function openSidebar() { sidebar.classList.add('open'); sidebarOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeSidebar() { sidebar.classList.remove('open'); sidebarOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+        hamburgerBtn.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
