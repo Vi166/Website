@@ -304,39 +304,39 @@
 
     <section class="gallery-section">
         <div class="masonry-grid" id="masonryGrid">
-            <div class="masonry-item" data-category="curtains" onclick="openModal('Images/1.png')">
+            <div class="masonry-item" data-category="curtains" data-img="Images/1.png">
                 <img src="Images/1.png" alt="Bespoke curtain example 1">
                 <div class="masonry-overlay"><span class="masonry-label">Bespoke Curtains</span></div>
             </div>
-            <div class="masonry-item" data-category="blinds" onclick="openModal('Images/2.jpg')">
+            <div class="masonry-item" data-category="blinds" data-img="Images/2.jpg">
                 <img src="Images/4.png" alt="Roman blind example">
                 <div class="masonry-overlay"><span class="masonry-label">Roman Blind</span></div>
             </div>
-            <div class="masonry-item" data-category="curtains" onclick="openModal('Images/8.png')">
+            <div class="masonry-item" data-category="curtains" data-img="Images/8.png">
                 <img src="Images/8.png" alt="Bespoke curtain example 3">
                 <div class="masonry-overlay"><span class="masonry-label">Bespoke Curtains</span></div>
             </div>
-            <div class="masonry-item" data-category="soft" onclick="openModal('Images/3.png')">
+            <div class="masonry-item" data-category="soft" data-img="Images/3.png">
                 <img src="Images/3.png" alt="Soft furnishings">
                 <div class="masonry-overlay"><span class="masonry-label">Soft Furnishings</span></div>
             </div>
-            <div class="masonry-item" data-category="blinds" onclick="openModal('Images/9.png')">
+            <div class="masonry-item" data-category="blinds" data-img="Images/9.png">
                 <img src="Images/9.png" alt="Roman blind example">
                 <div class="masonry-overlay"><span class="masonry-label">Roman Blind</span></div>
             </div>
-            <div class="masonry-item" data-category="curtains" onclick="openModal('Images/5.jpg')">
+            <div class="masonry-item" data-category="curtains" data-img="Images/5.jpg">
                 <img src="Images/5.jpg" alt="Curtain detail">
                 <div class="masonry-overlay"><span class="masonry-label">Curtains</span></div>
             </div>
-            <div class="masonry-item" data-category="soft" onclick="openModal('Images/review2.jpg')">
+            <div class="masonry-item" data-category="soft" data-img="Images/review2.jpg">
                 <img src="Images/review2.jpg" alt="Nursery soft furnishings">
                 <div class="masonry-overlay"><span class="masonry-label">Nursery Furnishings</span></div>
             </div>
-            <div class="masonry-item" data-category="curtains" onclick="openModal('Images/2.jpg')">
+            <div class="masonry-item" data-category="curtains" data-img="Images/2.jpg">
                 <img src="Images/2.jpg" alt="Curtain example">
                 <div class="masonry-overlay"><span class="masonry-label">Bespoke Curtains</span></div>
             </div>
-            <div class="masonry-item" data-category="soft" onclick="openModal('Images/6.png')">
+            <div class="masonry-item" data-category="soft" data-img="Images/6.png">
                 <img src="Images/6.png" alt="Handmade cushions">
                 <div class="masonry-overlay"><span class="masonry-label">Cushions</span></div>
             </div>
@@ -377,100 +377,12 @@
 
     <!-- MODAL -->
     <div id="galleryModal" class="modal" role="dialog" aria-label="Image gallery">
-        <span class="close" onclick="closeModal()">×</span>
+        <span class="close" id="modalClose">×</span>
         <img class="modal-content" id="modalImage" alt="Gallery image">
-        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-        <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <span class="prev" id="modalPrev">&#10094;</span>
+        <span class="next" id="modalNext">&#10095;</span>
     </div>
 
-    <script>
-        // Nav
-        const nav = document.getElementById('mainNav');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-
-        // Sidebar
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const sidebarOverlay = document.getElementById('sidebarOverlay');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarClose = document.getElementById('sidebarClose');
-        function openSidebar() { sidebar.classList.add('open'); sidebarOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeSidebar() { sidebar.classList.remove('open'); sidebarOverlay.classList.remove('open'); document.body.style.overflow = ''; }
-        hamburgerBtn.addEventListener('click', openSidebar);
-        sidebarClose.addEventListener('click', closeSidebar);
-        sidebarOverlay.addEventListener('click', closeSidebar);
-
-        // Scroll reveal for masonry
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach((e, i) => {
-                if (e.isIntersecting) {
-                    setTimeout(() => e.target.classList.add('visible'), i * 80);
-                    observer.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.05 });
-        document.querySelectorAll('.masonry-item').forEach(el => observer.observe(el));
-
-        // Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const items = document.querySelectorAll('.masonry-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                items.forEach(item => {
-                    const show = filter === 'all' || item.dataset.category === filter;
-                    item.style.opacity = show ? '1' : '0.2';
-                    item.style.pointerEvents = show ? 'all' : 'none';
-                    item.style.transform = show ? 'translateY(0)' : 'translateY(8px)';
-                });
-            });
-        });
-
-        // Gallery Modal
-        let currentImageIndex = 0;
-        let galleryImageSources = [];
-
-        function initGallery() {
-            const imgs = document.querySelectorAll('.masonry-item img');
-            galleryImageSources = Array.from(imgs).map(img => img.src);
-        }
-
-        function openModal(src) {
-            initGallery();
-            const modal = document.getElementById('galleryModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.classList.add('active');
-            modal.style.display = 'flex';
-            modalImg.src = src;
-            currentImageIndex = galleryImageSources.findIndex(s => s.endsWith(src.replace('Images/', '')));
-            if (currentImageIndex === -1) currentImageIndex = 0;
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('galleryModal');
-            modal.classList.remove('active');
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        function changeImage(dir) {
-            if (!galleryImageSources.length) return;
-            currentImageIndex = (currentImageIndex + dir + galleryImageSources.length) % galleryImageSources.length;
-            document.getElementById('modalImage').src = galleryImageSources[currentImageIndex];
-        }
-
-        document.addEventListener('keydown', e => {
-            const modal = document.getElementById('galleryModal');
-            if (modal.style.display === 'flex') {
-                if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowLeft') changeImage(-1);
-                if (e.key === 'ArrowRight') changeImage(1);
-            }
-        });
-        document.getElementById('galleryModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-    </script>
+    <script src="portfolio.js" defer></script>
 </body>
 </html>
