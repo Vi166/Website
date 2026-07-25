@@ -1601,27 +1601,27 @@
             <a href="portfolio.html" class="btn-secondary">View All Work</a>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item reveal" onclick="openModal('Images/1.png')">
+            <div class="gallery-item reveal" data-img="Images/1.png">
                 <img src="Images/1.png" alt="Bespoke curtains example">
                 <div class="gallery-item-overlay"><span class="gallery-item-label">Bespoke Curtains</span></div>
             </div>
-            <div class="gallery-item reveal reveal-delay-1" onclick="openModal('Images/2.jpg')">
+            <div class="gallery-item reveal reveal-delay-1" data-img="Images/2.jpg">
                 <img src="Images/2.jpg" alt="Curtain detail">
                 <div class="gallery-item-overlay"><span class="gallery-item-label">Curtain Detail</span></div>
             </div>
-            <div class="gallery-item reveal reveal-delay-2" onclick="openModal('Images/9.png')">
+            <div class="gallery-item reveal reveal-delay-2" data-img="Images/9.png">
                 <img src="Images/9.png" alt="Roman blind">
                 <div class="gallery-item-overlay"><span class="gallery-item-label">Roman Blind</span></div>
             </div>
-            <div class="gallery-item reveal" onclick="openModal('Images/3.png')">
+            <div class="gallery-item reveal" data-img="Images/3.png">
                 <img src="Images/3.png" alt="Soft furnishings">
                 <div class="gallery-item-overlay"><span class="gallery-item-label">Soft Furnishings</span></div>
             </div>
-            <div class="gallery-item reveal reveal-delay-1" onclick="openModal('Images/WindowTreatment.png')">
+            <div class="gallery-item reveal reveal-delay-1" data-img="Images/WindowTreatment.png">
                 <img src="Images/WindowTreatment.png" alt="Window treatment">
                 <div class="gallery-item-overlay"><span class="gallery-item-label">Window Treatment</span></div>
             </div>
-            <div class="gallery-item reveal reveal-delay-2" onclick="openModal('Images/6.png')">
+            <div class="gallery-item reveal reveal-delay-2" data-img="Images/6.png">
                 <img src="Images/6.png" alt="Handmade cushions">
                 <div class="gallery-item-overlay"><span class="gallery-item-label">Cushions</span></div>
             </div>
@@ -1748,10 +1748,10 @@
 
     <!-- GALLERY MODAL -->
     <div id="galleryModal" class="modal" role="dialog" aria-label="Image gallery">
-        <span class="close" onclick="closeModal()">×</span>
+        <span class="close" id="modalClose">×</span>
         <img class="modal-content" id="modalImage" alt="Gallery image">
-        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-        <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <span class="prev" id="modalPrev">&#10094;</span>
+        <span class="next" id="modalNext">&#10095;</span>
     </div>
 
     <!-- LOCAL SEO: Area served text block (visible, keyword-rich) -->
@@ -1806,100 +1806,6 @@
     }
     </script>
 
-    <script>
-        // =============================================
-        // NAV SCROLL EFFECT
-        // =============================================
-        const nav = document.getElementById('mainNav');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 60);
-        });
-
-        // =============================================
-        // SIDEBAR
-        // =============================================
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const sidebarOverlay = document.getElementById('sidebarOverlay');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarClose = document.getElementById('sidebarClose');
-
-        function openSidebar() {
-            sidebar.classList.add('open');
-            sidebarOverlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSidebar() {
-            sidebar.classList.remove('open');
-            sidebarOverlay.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        hamburgerBtn.addEventListener('click', openSidebar);
-        sidebarClose.addEventListener('click', closeSidebar);
-        sidebarOverlay.addEventListener('click', closeSidebar);
-
-        // =============================================
-        // SCROLL REVEAL
-        // =============================================
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // =============================================
-        // GALLERY MODAL
-        // =============================================
-        let currentImageIndex = 0;
-        let galleryImageSources = [];
-
-        function initGallery() {
-            const imgs = document.querySelectorAll('.gallery-item img');
-            galleryImageSources = Array.from(imgs).map(img => img.src);
-        }
-
-        function openModal(src) {
-            initGallery();
-            const modal = document.getElementById('galleryModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.classList.add('active');
-            modal.style.display = 'flex';
-            modalImg.src = src;
-            currentImageIndex = galleryImageSources.findIndex(s => s.includes(src.split('/').pop())) || 0;
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('galleryModal');
-            modal.classList.remove('active');
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        function changeImage(dir) {
-            if (!galleryImageSources.length) return;
-            currentImageIndex = (currentImageIndex + dir + galleryImageSources.length) % galleryImageSources.length;
-            document.getElementById('modalImage').src = galleryImageSources[currentImageIndex];
-        }
-
-        document.addEventListener('keydown', e => {
-            const modal = document.getElementById('galleryModal');
-            if (modal.style.display === 'flex') {
-                if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowLeft') changeImage(-1);
-                if (e.key === 'ArrowRight') changeImage(1);
-            }
-        });
-
-        document.getElementById('galleryModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
-    </script>
+    <script src="main.js" defer></script>
 </body>
 </html>
